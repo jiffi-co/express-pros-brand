@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="./logo/svg/logo-primary-3blue.svg" alt="Express Employment Professionals" height="56">
+  <img src="./logo/png/logo-primary-3blue.png" alt="Express Employment Professionals" height="56">
 </p>
 
 # Express Employment Professionals ANZ, as code

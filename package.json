@@ -1,0 +1,55 @@
+{
+  "name": "@jiffi-co/express-pros-brand",
+  "version": "0.1.0",
+  "description": "Brand-as-code system for Express Employment Professionals ANZ: tokens, fonts, logos, reference components, and brand docs.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./tokens": "./tokens/tokens.ts",
+    "./tokens.json": "./tokens/tokens.json",
+    "./css": "./tokens/tokens.css",
+    "./globals.css": "./styles/globals.css",
+    "./tailwind": "./tailwind.preset.ts",
+    "./fonts": "./fonts/fonts.css",
+    "./components/*": "./components/*",
+    "./logo/*": "./logo/*"
+  },
+  "files": [
+    "tokens",
+    "fonts",
+    "logo",
+    "components",
+    "examples",
+    "styles",
+    "brand",
+    "tailwind.preset.ts"
+  ],
+  "scripts": {
+    "build:tokens": "node scripts/generate-tokens.mjs",
+    "build:logos": "python3 scripts/build-logos.py",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run build:tokens && npm run check:contrast && npm run typecheck"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.6.0"
+  }
+}

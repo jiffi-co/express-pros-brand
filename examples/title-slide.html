@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Express title slide</title>
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <style>
+      /* 16:9 title slide, 1280 x 720 at 1x. */
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background: var(--palette-neutral-50);
+        padding: var(--space-8);
+      }
+
+      .slide {
+        position: relative;
+        width: 1280px;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: var(--space-6);
+        padding: 88px 96px;
+        overflow: hidden;
+        color: var(--brand-text-inverse);
+        background-color: var(--palette-blue-deepest);
+        box-shadow: var(--shadow-raised);
+      }
+
+      /* Gradient wash on the trailing edge, per the brand guide's page treatment. */
+      .slide::after {
+        content: "";
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 34%;
+        background-image: var(--palette-gradient-blue-purple);
+        opacity: 0.9;
+        clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      .slide > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .slide__logo {
+        height: 56px;
+        width: auto;
+      }
+
+      .slide__title {
+        margin: 0;
+        max-width: 20ch;
+        font-size: 64px;
+        line-height: 1.05;
+        color: var(--brand-text-inverse);
+      }
+
+      .slide__subtitle {
+        margin: 0;
+        max-width: 46ch;
+        font-size: 22px;
+        line-height: 1.5;
+        color: var(--brand-text-inverse-muted);
+      }
+
+      .slide__meta {
+        margin: 0;
+        font-size: 15px;
+        color: var(--brand-text-inverse-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="slide">
+      <img
+        class="slide__logo"
+        src="../logo/svg/logo-primary-white.svg"
+        alt="Express Employment Professionals"
+      />
+      <h1 class="slide__title">Hiring outlook for the year ahead</h1>
+      <p class="slide__subtitle">
+        What the market is telling employers across Australia and New Zealand,
+        and what to do about it before the next quarter.
+      </p>
+      <p class="slide__meta">Express Employment Professionals ANZ &middot; [DD/MM/YYYY]</p>
+    </section>
+  </body>
+</html>

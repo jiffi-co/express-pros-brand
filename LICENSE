@@ -1,0 +1,64 @@
+# Licensing and usage
+
+This repository is not open source. Rights differ by asset class, so they are
+set out separately below.
+
+## Brand assets: Express Employment Professionals
+
+The Express Employment Professionals name, the stylised "X", the logo lock-ups,
+the tagline "Respecting People. Impacting Business.", and the brand colour
+palette are the property of Express Services, Inc. and its subsidiaries.
+
+"Express Employment Professionals" and the stylised "X" are registered trade
+marks of Express Services, Inc.
+
+The logo artwork in `logo/` is derived from files Express publishes for vendor
+and press use at https://www.expresspros.com/newsroom/logos and from the lock-up
+published on https://www.expressfranchising.com.au. Use is governed by the
+Express Employment Professionals Brand Guide (a copy is at
+`brand/express-brand-guide-2026-06.pdf`) and by the terms of the engagement
+between Jiffi and Express Employment Professionals ANZ. It does not carry a
+general licence to third parties.
+
+Brand contact: Marketing and Communications, Express Employment International,
+Marketing@ExpressPros.com.
+
+## Fonts
+
+| Family | Foundry | Licence | Vendored here |
+| --- | --- | --- | --- |
+| Roboto | Google | Apache License 2.0 | Yes, `fonts/roboto/` |
+| Roboto Condensed | Google | Apache License 2.0 | Yes, `fonts/roboto-condensed/` |
+| Proxima Nova | Mark Simonson Studio | Commercial, per-seat and per-domain | **No** |
+| Myriad Pro | Adobe | Adobe font licence | **No** |
+
+Roboto and Roboto Condensed are redistributable under Apache 2.0. Full licence
+text sits alongside the files in each family folder.
+
+Proxima Nova is Express's print and collateral typeface and Myriad Pro Roman sets
+the tagline lock-up. Both are commercially licensed and are deliberately **not**
+included. Anyone producing print collateral needs their own licence. On screen,
+Roboto is the approved substitute, on Express's own instruction in the brand
+guide.
+
+## Documentation and code
+
+The markdown in `brand/`, the token definitions, the reference components in
+`components/`, the examples in `examples/`, and the build scripts in `scripts/`
+were written by Jiffi (https://jiffi.co) for Express Employment Professionals
+ANZ. They are provided under the terms of that engagement and carry no general
+licence.
+
+## Photography
+
+None is included. Every photograph on Express properties is licensed or
+commissioned work that Express Employment International and its franchise
+subsidiaries hold rights to use. Those rights do not extend to redistribution
+here. See `brand/photography.md`.
+
+## Third-party quotations
+
+Statistics attributed to the American Staffing Association, Entrepreneur, Forbes,
+Staffing Industry Analysts, and Great Place to Work belong to those
+organisations. Reproduce them with attribution and check they are current before
+publishing.

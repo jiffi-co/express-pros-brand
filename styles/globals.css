@@ -1,0 +1,261 @@
+/* Express Employment Professionals base stylesheet.
+ *
+ * Import this one file and the whole system is live: fonts, tokens, element
+ * defaults, and the two brand registers. Everything below consumes semantic
+ * aliases (--brand-*), never raw primitives, so switching register with
+ * data-brand-mode="franchise" restyles the page without touching a rule.
+ */
+
+@import url("../fonts/fonts.css");
+@import url("../tokens/tokens.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--brand-type-body-family), Arial, Helvetica, sans-serif;
+  font-size: var(--brand-type-body-size);
+  font-weight: var(--brand-type-body-weight);
+  line-height: var(--brand-type-body-leading);
+  color: var(--brand-text-primary);
+  background-color: var(--brand-bg-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings ------------------------------------------------------------------
+ * Line heights land on the 26px baseline Express's own site keeps: 52px for
+ * h1–h3, 26px for h4–h6. Keep vertical rhythm on that grid.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 var(--space-4);
+  font-family: var(--brand-type-heading-family), Arial, Helvetica, sans-serif;
+  font-weight: var(--brand-type-heading-weight);
+  letter-spacing: var(--brand-type-heading-tracking);
+  color: var(--brand-text-heading);
+}
+
+/* The franchise register sets h1 and h2 in caps but leaves h3 and below in
+ * sentence case, which is what expressfranchising.com.au actually ships. Two
+ * tokens rather than one, so the register can express that. */
+
+h1,
+h2 {
+  text-transform: var(--brand-type-heading-case);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  text-transform: var(--brand-type-subheading-case);
+}
+
+h1 {
+  font-size: var(--brand-type-h1-size);
+  line-height: var(--brand-type-h1-leading);
+}
+
+h2 {
+  font-size: var(--brand-type-h2-size);
+  line-height: var(--brand-type-h2-leading);
+}
+
+h3 {
+  font-size: var(--brand-type-h3-size);
+  line-height: var(--brand-type-h3-leading);
+}
+
+h4 {
+  font-size: var(--type-size-xl);
+  line-height: 1.0833;
+}
+
+h5 {
+  font-size: var(--type-size-lg);
+  line-height: 1.3;
+}
+
+h6 {
+  font-size: var(--type-size-base);
+  line-height: 1.625;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--space-baseline);
+}
+
+/* Links ---------------------------------------------------------------------- */
+
+a {
+  color: var(--brand-text-link);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--brand-text-link-hover);
+}
+
+/* Focus ---------------------------------------------------------------------
+ * Visible on every interactive element, on both light and inverse grounds.
+ * --brand-focus-ring clears 4.77:1 on white and 4.34:1 on the #F4F4F4 tint.
+ */
+
+:focus-visible {
+  outline: 3px solid var(--brand-focus-ring);
+  outline-offset: 2px;
+}
+
+[data-brand-ground^="inverse"] :focus-visible {
+  outline-color: var(--brand-focus-ring-inverse);
+}
+
+/* Inverse grounds -----------------------------------------------------------
+ * Four values, all of which flip text, headings, links, borders and the focus
+ * ring to their inverse pairings. They differ only in what paints the ground:
+ *
+ *   inverse          deep blue. The standard Express band.
+ *   inverse-strong   deepest blue. Full-bleed sections and slide grounds.
+ *   inverse-brand    medium blue. The franchise site's stat tiles.
+ *   inverse-none     nothing. For a block that paints its own ground, such as a
+ *                    gradient card or a photograph with an overlay.
+ *
+ * Only the ground rule sets background-color, so a caller painting its own
+ * background never has to fight this stylesheet for it.
+ */
+
+[data-brand-ground^="inverse"] {
+  color: var(--brand-text-inverse);
+}
+
+[data-brand-ground="inverse"] {
+  background-color: var(--brand-bg-inverse);
+}
+
+[data-brand-ground="inverse-strong"] {
+  background-color: var(--brand-bg-inverse-strong);
+}
+
+[data-brand-ground="inverse-brand"] {
+  background-color: var(--brand-bg-brand);
+}
+
+[data-brand-ground^="inverse"] h1,
+[data-brand-ground^="inverse"] h2,
+[data-brand-ground^="inverse"] h3,
+[data-brand-ground^="inverse"] h4,
+[data-brand-ground^="inverse"] h5,
+[data-brand-ground^="inverse"] h6 {
+  color: var(--brand-text-inverse);
+}
+
+[data-brand-ground^="inverse"] a {
+  color: var(--brand-text-inverse);
+}
+
+[data-brand-ground^="inverse"] a:hover {
+  color: var(--brand-text-inverse-muted);
+}
+
+/* Layout --------------------------------------------------------------------- */
+
+.brand-container {
+  width: 100%;
+  max-width: var(--brand-type-container);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.brand-section {
+  padding-block: var(--space-16);
+}
+
+.brand-section--subtle {
+  background-color: var(--brand-bg-subtle);
+}
+
+/* Brand gradients -----------------------------------------------------------
+ * The four approved pairings. Statistics and pull quotes sit on these in large
+ * white type, which is what they are for. Never invent a fifth pairing.
+ */
+
+.brand-gradient--green-blue {
+  background-image: var(--palette-gradient-green-blue);
+}
+
+.brand-gradient--blue-purple {
+  background-image: var(--palette-gradient-blue-purple);
+}
+
+.brand-gradient--purple-orange {
+  background-image: var(--palette-gradient-purple-orange);
+}
+
+.brand-gradient--red-yellow {
+  background-image: var(--palette-gradient-red-yellow);
+}
+
+.brand-gradient--green-blue-h {
+  background-image: var(--palette-gradient-green-blue-h);
+}
+
+.brand-gradient--blue-purple-h {
+  background-image: var(--palette-gradient-blue-purple-h);
+}
+
+.brand-gradient--purple-orange-h {
+  background-image: var(--palette-gradient-purple-orange-h);
+}
+
+.brand-gradient--red-yellow-h {
+  background-image: var(--palette-gradient-red-yellow-h);
+}
+
+/* Photo overlays ------------------------------------------------------------
+ * Express never runs a hero photograph bare. Layer one of these over the image
+ * so white headline type has a ground it can be measured against.
+ */
+
+.brand-overlay--blue {
+  background-image: var(--palette-overlay-blue);
+}
+
+.brand-overlay--purple {
+  background-image: var(--palette-overlay-purple);
+}
+
+.brand-overlay--deep {
+  background-image: var(--palette-overlay-deep);
+}
+
+/* Motion --------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

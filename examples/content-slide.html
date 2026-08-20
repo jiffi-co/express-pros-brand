@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Express content slide</title>
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <style>
+      /* 16:9 content slide, 1280 x 720 at 1x. White ground, deep blue headings,
+         grey body, one statistic on a gradient. */
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background: var(--palette-neutral-50);
+        padding: var(--space-8);
+      }
+
+      .slide {
+        position: relative;
+        width: 1280px;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: var(--space-8);
+        padding: 64px 96px 40px;
+        background: var(--brand-bg-default);
+        box-shadow: var(--shadow-raised);
+      }
+
+      /* Thin gradient rule along the top edge, the quiet version of the brand's
+         full-height gradient bar, for slides that need the ground to stay white. */
+      .slide::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 8px;
+        background-image: var(--palette-gradient-green-blue-h);
+      }
+
+      .slide__title {
+        margin: 0;
+        font-size: 40px;
+        line-height: 1.15;
+      }
+
+      .slide__grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: var(--space-12);
+        align-items: center;
+      }
+
+      .slide__points {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 20px;
+      }
+
+      .slide__points li {
+        position: relative;
+        margin-bottom: var(--space-5);
+        padding-left: 34px;
+      }
+
+      /* The stylised X does the work a bullet glyph would. */
+      .slide__points li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.25em;
+        width: 20px;
+        height: 20px;
+        background: url("../logo/svg/logo-icon-x-deep-blue.svg") no-repeat center /
+          contain;
+      }
+
+      .stat {
+        margin: 0;
+        padding: var(--space-8);
+        border-radius: var(--radius-default);
+        text-align: center;
+        color: var(--brand-text-inverse);
+        background-image: var(--palette-gradient-green-blue);
+      }
+
+      .stat__value {
+        margin: 0;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .stat__label {
+        margin: var(--space-3) 0 0;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
+      .stat__source {
+        display: block;
+        margin-top: var(--space-3);
+        font-size: 14px;
+        font-style: normal;
+        opacity: 0.9;
+      }
+
+      .slide__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid var(--brand-border-subtle);
+        padding-top: var(--space-4);
+        font-size: 13px;
+        color: var(--brand-text-primary);
+      }
+
+      .slide__footer img {
+        height: 26px;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="slide">
+      <h2 class="slide__title">Why employers choose Express</h2>
+
+      <div class="slide__grid">
+        <ul class="slide__points">
+          <li>
+            Every office is locally owned by business leaders in the community it
+            serves, backed by an international head office.
+          </li>
+          <li>
+            Every associate goes through an ISO-registered selection process
+            before they reach your floor.
+          </li>
+          <li>
+            One brief covers Office Services, Light Industrial and Skilled Trades
+            &mdash; temporary, contract or permanent.
+          </li>
+          <li>We never charge a fee to the people we place.</li>
+        </ul>
+
+        <figure class="stat">
+          <p class="stat__value">80%</p>
+          <figcaption class="stat__label">
+            of companies that use staffing services say they find quality
+            employees.
+            <cite class="stat__source">&mdash; American Staffing Association</cite>
+          </figcaption>
+        </figure>
+      </div>
+
+      <footer class="slide__footer">
+        <img
+          src="../logo/svg/logo-primary-3blue.svg"
+          alt="Express Employment Professionals"
+        />
+        <span>Respecting People. Impacting Business.&trade;</span>
+      </footer>
+    </section>
+  </body>
+</html>

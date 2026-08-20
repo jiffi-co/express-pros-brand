@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Express proposal cover</title>
+    <link rel="stylesheet" href="../styles/globals.css" />
+    <style>
+      /* A4 landscape cover. Prints at 297 x 210mm; on screen it scales to fit. */
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        background: var(--palette-neutral-50);
+        padding: var(--space-8);
+      }
+
+      .cover {
+        position: relative;
+        width: 297mm;
+        height: 210mm;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 34mm;
+        overflow: hidden;
+        background: var(--brand-bg-default);
+        box-shadow: var(--shadow-raised);
+      }
+
+      .cover__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 26mm 22mm;
+      }
+
+      /* The brand-guide edge treatment: one gradient running the full height. */
+      .cover__edge {
+        background-image: var(--palette-gradient-blue-purple);
+      }
+
+      .cover__logo {
+        height: 22mm;
+        width: auto;
+      }
+
+      .cover__title {
+        margin: 0 0 6mm;
+        font-size: 44pt;
+        line-height: 1.05;
+        color: var(--brand-text-heading);
+      }
+
+      .cover__subtitle {
+        margin: 0;
+        max-width: 150mm;
+        font-size: 15pt;
+        line-height: 1.5;
+        color: var(--brand-text-primary);
+      }
+
+      .cover__meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: var(--space-8);
+        border-top: 1px solid var(--brand-border-subtle);
+        padding-top: 6mm;
+        font-size: 10pt;
+        color: var(--brand-text-primary);
+      }
+
+      .cover__meta dt {
+        margin: 0 0 1mm;
+        font-weight: 700;
+        color: var(--brand-text-heading);
+      }
+
+      .cover__meta dd {
+        margin: 0;
+      }
+
+      /* The tagline is set in Myriad Pro Roman in medium blue, title case, with
+         the TM. Myriad is not vendored here, so this falls back to Roboto. */
+      .cover__tagline {
+        margin-top: 10mm;
+        font-family: var(--type-tagline), var(--type-sans), Arial, sans-serif;
+        font-size: 12pt;
+        color: var(--palette-blue-medium);
+      }
+
+      @media print {
+        body {
+          padding: 0;
+          background: none;
+        }
+        .cover {
+          box-shadow: none;
+        }
+        @page {
+          size: A4 landscape;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="cover">
+      <div class="cover__body">
+        <header>
+          <img
+            class="cover__logo"
+            src="../logo/svg/logo-primary-3blue.svg"
+            alt="Express Employment Professionals"
+          />
+        </header>
+
+        <div>
+          <h1 class="cover__title">Workforce proposal</h1>
+          <p class="cover__subtitle">
+            Prepared for [Client name] by your local Express Employment
+            Professionals team. Screened people, ISO-registered process, and a
+            team that knows the businesses hiring in your community.
+          </p>
+          <p class="cover__tagline">Respecting People. Impacting Business.&trade;</p>
+        </div>
+
+        <dl class="cover__meta">
+          <div>
+            <dt>Prepared for</dt>
+            <dd>[Client name]</dd>
+          </div>
+          <div>
+            <dt>Prepared by</dt>
+            <dd>[Owner name], Express [Office]</dd>
+          </div>
+          <div>
+            <dt>Date</dt>
+            <dd>[DD/MM/YYYY]</dd>
+          </div>
+          <div>
+            <dt>Valid until</dt>
+            <dd>[DD/MM/YYYY]</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="cover__edge"></div>
+    </article>
+  </body>
+</html>
